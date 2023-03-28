@@ -1,4 +1,4 @@
-var socket = io.connect("https://usual-drawing-game-api.vercel.app");
+var socket = io.connect("http://34.171.54.43:4000");
 var showCanvas = false;
 var showViewerCanvas = false;
 var showcreateJoin = false;
