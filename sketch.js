@@ -90,6 +90,8 @@ function draw() {
     //   if (res) {
     socket.emit('drawing', [mouseX, mouseY, pmouseX, pmouseY])
     // console.log(mouseX, mouseY, pmouseX, pmouseY)
+    const ctx = canvas.getContext("2d");
+    ctx.lineWidth = 10;
     stroke(255);
     line(mouseX, mouseY, pmouseX, pmouseY);
   }
@@ -185,6 +187,8 @@ $(function () {
   });
   socket.on("receivedDoodle", (data) => {
     if (data[4] != socket.id) {
+      const ctx = canvas.getContext("2d");
+      ctx.lineWidth = 10;
       stroke(255);
       line(data[0], data[1], data[2], data[3]);
     }
